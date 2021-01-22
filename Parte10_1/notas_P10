@@ -1,0 +1,18 @@
+Notas Parte09:
+
+--primeiro passo é sempre analisar o espaço exterior ao robot, dai vem os sensores
+
+--rgb damos a imagem em 2D, com o valor do pixel em cada elemento da matriz
+
+--lidares com chuva nao funcionam muito bem
+x RED
+y GREEN
+z BLUE
+
+x e sempre para a frente
+
+range min e max tem a ver com a potencia do feixe
+
+para usar frames (refS) diferentes é usar funçoes de transferencia
+
+quando nao sabemos o que uma var é colocamos =None

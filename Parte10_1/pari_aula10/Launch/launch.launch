@@ -1,0 +1,11 @@
+<launch>
+
+
+    <!-- Bag Play -->
+    <node pkg="rosbag" type="play" name="rosbag_play" output="screen" args="$(env HOME)/catkin_ws/src/PARI_Projects/Parte10/bag_files/2011-04-06-07-04-17.bag -l"/>
+
+    <!-- Rvix -->
+
+    <node pkg="rviz" type="rviz" name="Visualization" output="screen" args="-d $(find pari_aula10)/rviz/Config_Ex5.rviz" />
+
+</launch>
