@@ -1,0 +1,79 @@
+para mudar nomes de topicos de nos, podemos usar o remapeamento
+
+para lançarmos varios nos a partir do mesmo codigo, temos de conseguir mudar nomes...
+
+em vez de estar sempre a criar serviços e msg iguais, posso usar as das outras aulas
+
+remapeamento é so mudar as variaveis, e esta embutido dentro do ros
+
+remapeamento: rosrun pari_aula9_ex1 publisher.py chatter:=new_chat3  , onde estava chatter passou a estar new_chat3, mas quando fazemos print temos de por rospy.remap_name(topic_name), mas o nome do topico modou na mesma, mesmo nao pondo
+
+para mudar o nome do no:  rosrun pari_aula9_ex1 publisher.py chatter:=new_chat3 __name:=new_node_name
+
+parametros sao variaveis que todos os nos podem usar, podemos ler e escrever os parametros
+
+rosparam list
+
+
+
+rosparam set my_new_param 14
+rosparam get /my_new_param 
+rosparam list 
+
+
+quando criamos os parametros ele ficam ativos enquando o roscore estiver
+
+getattr(Fore,highlight_text_color) se highlight for RED, é o mesmo de Fore.RED
+
+
+
+/highlight_text_color esta pendurado na raiz
+
+parametros pendurados no nome do no
+rosparam set /subscriber/highlight_text_color GREEN
+
+ficheiro yaml permite criar varios parametros de uma so vez 
+rosparam load params.yaml, assim ficam os parameter all definied
+
+pega em todos os parameter e coloca os no file param_now (criando o)
+rosparam dump param_now.yaml
+
+
+Para facilitar lançar muitos nos usamos o ficheiro roslaunch
+
+um launch file tem informaçao para lançar muitos nos, para diferentes topicos, com diferentes freq
+
+
+
+quando lanchamos o launch file, ele automaticamente lança o roscore
+
+
+
+<group if="$(arg run_publishers)">  quando tem $ quer dizer que vai ser um argumento, 
+
+
+quando criamos parametros no launch file, se criarmos dentro do node, ele fica com o nome do node antes
+
+
+roslaunch pari_aula9_ex5_bringup bringe_up.launch run_publishers:=false para meter o argumento do .launch a ser false
+
+na autoestrada, ligavamos tudo, e gravavamos as mensagens dadas pelas subcritores (camaras), depois no laboratorio desligamos o subscritores
+
+rosbag permite nos gravar as mensagens que quisermos para ficheiros
+
+para depois alimentar os subscritores com o ficheiro gravado na autoestrada, tenho de fazer o playback do bag file, em vez dos publicadores
+
+
+
+ rosbag record dog1 dog2 basta dizer o nome dos topicos a gravar
+
+rosbag play test_bag.bag -l , assim é como se os publicadores estivessem la!, -l corre em loop
+
+os subscritores nao sabem se estao a receber mensagens dos publicadores ou se estao a receber mensagens gravados
+
+
+
+
+
+
+

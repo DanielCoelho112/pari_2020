@@ -1,0 +1,62 @@
+<launch>
+
+    <arg name="run_publishers" default="true" />
+
+    <!-- global param -->
+    <param name = "highlight_text_color" value="GREEN" />
+
+
+    <!-- publishers -->
+
+    <group if="$(arg run_publishers)">
+        <node pkg="pari_aula9_ex5_bringup" type="publisher.py" name="publisher_A" output="screen">
+            <remap from="chatter" to="dog1"/>
+             <param name="frequency" value="1"/>
+        </node>
+
+           <node pkg="pari_aula9_ex5_bringup" type="publisher.py" name="publisher_B" output="screen">
+            <remap from="chatter" to="dog1"/>
+           <param name="frequency" value="3"/>
+        </node>
+
+           <node pkg="pari_aula9_ex5_bringup" type="publisher.py" name="publisher_C" output="screen">
+            <remap from="chatter" to="dog2"/>
+            <param name="frequency" value="2"/>
+        </node>
+
+    </group>
+
+
+    <group unless="$(arg run_publishers)">
+
+            <node pkg="rosbag" type="play" name="rosbag_play" output="screen" args="$(env HOME)/Desktop/test_bag.bag">
+
+        </node>
+
+
+      </group>
+
+
+
+
+
+
+
+
+     <node pkg="pari_aula9_ex5_bringup" type="subscriber.py" name="subscriber_AB1" output="screen">
+            <remap from="chatter" to="dog1"/>
+        </node>
+
+        <node pkg="pari_aula9_ex5_bringup" type="subscriber.py" name="subscriber_AB2" output="screen">
+            <remap from="chatter" to="dog1"/>
+        </node>
+
+<node pkg="pari_aula9_ex5_bringup" type="subscriber.py" name="subscriber_C" output="screen">
+            <remap from="chatter" to="dog2"/>
+        </node>
+
+    <!-- rqt graph -->
+
+    <node pkg = "rqt_graph" type="rqt_graph" name="rqt_graph"/>
+
+</launch>
