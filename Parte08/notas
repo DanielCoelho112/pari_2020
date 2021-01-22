@@ -1,0 +1,55 @@
+rosrun package node  (e abre logo o ficheiro)
+roscore é um pacote de nos, que tem o master
+catkin_create_pkg pari_aula8_ex3 std_msgs rospy
+
+rqt_graph analisa o sistema e faz um grafo de computação
+
+rostopic echo mostra o conteudo das mensagens que estao a ser publicadas num dado topico
+
+rqt_console abre uma consola com as mensagem todas, e podemos filtra las
+
+--------------------------------------------------------------
+
+Ex4
+
+packages nao podem ter o mesmo nome
+
+temos de criar uma mensagem nova 
+
+mover diretorios: mv pasta_a_mover caminho para onde quer mover
+
+caja. abre o explorador
+
+vamos ter de criar novas mensagens
+
+em msg dizemos quais informaçoes, tipos de mensagem, ordens
+para criar a lista é string[], estamos a especificar a mensage
+
+catkin_make compila o codigo
+
+primeiro temos de procurar de uma mensagemq que ja exista, se nao houver, criamo la nos
+
+isto das mensagens permite nos ter 2 programas a comunicar, como definimos tudo na .msg é possivel
+
+quando se cria uma mensagem é preciso compilar catkin_make no catkin_ws
+
+rosmsg show pari_aula8_ex4/DogM  mostra a mensagem DogM, os campos dela
+-----------------------------------------------------------------------------
+
+Ex5
+
+comunicaçao entre servidor e cliente é diferente
+
+neste caso o cliente manda um pedido ao servidor e este responde com uma resposta para o cliente
+
+no MSG apenas definimos o que vai na mensagemm, aqui definimos o que vai no pedido e na resposta 
+
+
+para fazer o pedido a um serviço: rosservice call /set_dog_name "new_name: 'joao'" 
+set_dog_name é o nome do serviço
+
+
+
+
+
+
