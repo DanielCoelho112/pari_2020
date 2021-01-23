@@ -1,0 +1,7 @@
+<launch>
+   <node pkg="p_dcoelho_core" name="red1" type="driver5_class.py" />
+     <node pkg="p_dcoelho_core" name="green1" type="driver5_class.py" />
+     <node pkg="p_dcoelho_core" name="blue1" type="driver5_class.py" />
+    
+    <node pkg="th_referee" name="referee" type="th_referee" output="screen" />
+</launch>

@@ -1,0 +1,13 @@
+driver 4 ---> Funciona com o marker do rviz e vai atrás dele!
+
+driver 5 ---> Olha para a imagem, e se encontrar o azul ataca-o, se nao o encontrar não faz nada;
+              Decision Making todo programado, com exceção do lidar para evitar colidir contra as barreiras
+
+              Next Step: Automatizar codigo para qualquer robot, neste momento ataca sempre azul e foge do red
+                         Embelezar Arquitetura
+                         Embelezar codigo
+
+
+
+TO DO: Meter colorama na descrição Inicial das equipas e assim
+

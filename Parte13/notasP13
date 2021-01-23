@@ -1,0 +1,118 @@
+Quando o robot começa gravamos o refeencial, e á medida qeu vamos andando, vamos localizando o robot relativamente ao ref inicial; Todas as trasnformaçoes sao publicadas depois relativamente ao inicial
+
+Usa se odometria para fazer esta localização, funciona como os contaquilometros,
+
+Há medida que eu faço mais movimentos, a diferença entre onde estamos, e onde esperamos estar vai ser maior!
+
+odometria o que faz tudo passa por ele, no nosso caso ele dava origem ao footprint, e o resto seguia em diante
+
+Quando se ve relativamente ao odom, vemos sempre relativamente á posicao inicial, dai vemos o movimento
+
+Ex1:
+
+Quem publica a odometria é o controlador, como no nosso caso quem tem o controlador é o gazebo, quem publica o odom é o gazebo
+
+O gazebo sabe onde esta tudo, todos os robots, enquando o rviz so sabe 1
+
+Quando pomos o fixed frame p_moliveira_base_link  ele (rviz) converte tudo relativamente a esse ref, é poderoso, porque podemos por relativamente ao odom, e temos tudo relativamente a um ref fixo
+
+Em odometria, se virmos uma parede, ela nao se mexe, mesmo estando a ser obtida pelo lidar que esta em movimento, mas como ele calcula tudo relativo a odom, ela esta fixa
+
+QUando se pega no robot e se transporta a odometria fica baralhado, e durante um tempo os dados dos lidares e assim ficam mal
+
+Quando as rodas derrapam é um problema para a odometria...
+
+Para andar á procura de um adversario podemos olhar para a odometria!!!!!
+
+
+Normalmente, em ROS, usase a relação entre /footprint (ou /baselink) com o /odom
+
+A odometria é um sistema de localização relativo, pois da a localização em relaçao a um ponto (odom), por outro lado, o sistema de localizaçao GPS é absoluto
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------
+
+Ex2:
+
+mapeamento: criar uma descriçao do cenario de onde estamos
+mapa bom melhora a localizaçao, e uma boa localizaçao melhora o mapa
+
+Usa se o SLAM juntamento com a odometria, ajuda se mutuamente
+
+para mapeamento é o gmapping, usa tf e scan lidar, publica map
+
+Map usa uma grelha pequena e com base nos beams de laser a baterem ou nao, cria um mapa, com base na odometria... assim vemos um robot a fazer SLAM, usa o lidar e vai reconstruindo com uma cor
+
+Podemos usar slam para o nosso jogo
+
+
+Com o rapto, o pode haver slams que funcionam ou nao, o que vamos usar nao funiona bem, fica muito perdido
+
+
+A odometria estima coisas, que podem ter erros, mas o slam corrigi as
+
+
+SLAM simultanious mapeamento e localizaçao
+
+para coisas standart, todos usam o no gmapping para fazer slam
+
+
+gmapping recebe tf e scan, e cria uma mapa, que vai construindo um mapa
+
+mapa é um mapa de ocupaçao
+
+-------------------------------------------------------------------------------------
+
+Ex3/4:
+
+vamos ter de olhar para a imagem que esta a ser publicada e perceber onde anda o gajo;
+
+Vamos fazer tudo para ja menos a visao
+
+Vamos fazer batota de forma a saber sempre onde estao os outros jogadores, por obra do gazebo, nao precisamos de olhar para o laser nem para a camara
+
+O gazebo publica o model/states e diz onde estao os elementos do robot em relaçao aos outros
+
+vamos escrever um no python que recebe o model e publica uma tf
+
+
+o model states do gazebo publica o estado do link primordial do modelo, por exemplo o footprint
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------
+
+Ex5/6:
+
+programa que é um agente, e vai tomar as decisoes do robot, em vez te termos o teleop, temos um progrmam
+o agente publica velocidades cmd_vel
+
+o rviz pode dar informaçao aos nos, marcadores interativos, a informaçao circula nos 2 sentidos 2DNAV GOAL
+
+o que é para fazer: descobri a orientaçao do objetivo, viro primeiro ate estar mesmo em frente, e depois é so acelerar!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+

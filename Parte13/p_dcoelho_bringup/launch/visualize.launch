@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="player_name" default="p_dcoelho"/>
+
+   <!-- Launch rviz, loading configuration file -->
+    <remap from="/move_base_simple/goal" to="$(arg player_name)/move_base_simple/goal"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="--display-config $(find p_dcoelho_bringup)/config/viz.rviz" required="false">
+    </node>
+
+</launch>

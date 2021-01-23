@@ -1,0 +1,13 @@
+Nao usar angulos no ex6, ver melhor as transformações
+
+--------------------------------Ex2------------------------------
+
+Para o jogo queremos fazer o spawn para varios robots,temos de criar um launch file para lançar varios robots
+
+Quando vamos a fugir temos de analisar tambem o laser lidar para evitar os obstaculos
+
+Fugir do red caçar o blue e ir contra paredes
+
+
+Para a semana: Parte 14 toda e Parte13 a parte do marker
+
