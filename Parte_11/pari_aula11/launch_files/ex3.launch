@@ -1,0 +1,81 @@
+<launch>
+
+    <!-- publishers -->
+
+
+        <node pkg="pari_aula11" type="circular_frame.py" name="Terra_Sol" output="screen">
+            <remap from="parent_name" to="Sol"/>
+            <remap from="child_name" to="Terra"/>
+             <param name="distance" value="1"/>
+            <param name="increment" value="0.01"/>
+        </node>
+
+     <node pkg="pari_aula11" type="circular_frame.py" name="Mercurio_Sol" output="screen">
+            <remap from="parent_name" to="Sol"/>
+            <remap from="child_name" to="Mercurio"/>
+             <param name="distance" value="0.387"/>
+            <param name="increment" value="0.0159"/>
+        </node>
+
+
+    <node pkg="pari_aula11" type="circular_frame.py" name="Venus_Sol" output="screen">
+            <remap from="parent_name" to="Sol"/>
+            <remap from="child_name" to="Venus"/>
+             <param name="distance" value="0.723"/>
+            <param name="increment" value="0.0118"/>
+        </node>
+
+
+    <node pkg="pari_aula11" type="circular_frame.py" name="Marte_Sol" output="screen">
+            <remap from="parent_name" to="Sol"/>
+            <remap from="child_name" to="Marte"/>
+             <param name="distance" value="1.52"/>
+            <param name="increment" value="0.00808"/>
+        </node>
+
+
+    <node pkg="pari_aula11" type="circular_frame.py" name="Lua_Terra" output="screen">
+            <remap from="parent_name" to="Terra"/>
+            <remap from="child_name" to="Lua"/>
+             <param name="distance" value="0.0257"/>
+            <param name="increment" value="0.000343"/>
+        </node>
+
+
+
+
+
+    <!--
+           <node pkg="pari_aula9_ex5_bringup" type="publisher.py" name="publisher_B" output="screen">
+            <remap from="chatter" to="dog1"/>
+           <param name="frequency" value="3"/>
+        </node>
+
+           <node pkg="pari_aula9_ex5_bringup" type="publisher.py" name="publisher_C" output="screen">
+            <remap from="chatter" to="dog2"/>
+            <param name="frequency" value="2"/>
+        </node>
+
+
+
+     <node pkg="pari_aula9_ex5_bringup" type="subscriber.py" name="subscriber_AB1" output="screen">
+            <remap from="chatter" to="dog1"/>
+        </node>
+
+        <node pkg="pari_aula9_ex5_bringup" type="subscriber.py" name="subscriber_AB2" output="screen">
+            <remap from="chatter" to="dog1"/>
+        </node>
+
+<node pkg="pari_aula9_ex5_bringup" type="subscriber.py" name="subscriber_C" output="screen">
+            <remap from="chatter" to="dog2"/>
+        </node>
+
+
+
+    <node pkg = "rqt_graph" type="rqt_graph" name="rqt_graph"/>
+
+    -->
+
+
+
+</launch>

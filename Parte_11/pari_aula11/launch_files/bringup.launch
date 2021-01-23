@@ -1,0 +1,18 @@
+<launch>
+
+    <arg name="xacro" default="false" />
+
+    <group if="$(arg xacro)">
+       <include file="$(find pari_aula11)/launch_files/display_x.launch" />
+
+    </group>
+
+
+    <group unless="$(arg xacro)">
+         <include file="$(find pari_aula11)/launch_files/display.launch" />
+      </group>
+
+     <include file="$(find pari_aula11)/launch_files/visualize.launch" />
+
+
+</launch>
