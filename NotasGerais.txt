@@ -6,3 +6,9 @@ O gazebo publica o ODOM e o link primordial do robot, no nosso caso base_footpri
 A entidade responsavel por publicar desde o base_footprint até os restantes é o robot_state_publisher
 
 Logo, sem gazebo não existe ODOM, e portanto não existe as twist para o controlar!!!
+
+
+
+Na vida real, somos nós que temos de publicar no ODOM, ou seja, temos de publicar a velocidade do carro, bem como a sua pose relativamente ao frame ODOM!!!
+
+A partir dai, sabemos sempre a nossa posição relativa ao frame odom!, que posteriormente podemos transformar no map
