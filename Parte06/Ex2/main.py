@@ -17,8 +17,8 @@ def main():
         _, image = capture.read()
         cv2.imshow(window_name, image)
         key = cv2.waitKey(1)
-        if chr(key) == ' ':
-            break
+        # if chr(key) == ' ':
+        #     break
 
     # ---------------
     # program's end

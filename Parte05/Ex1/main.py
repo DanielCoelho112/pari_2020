@@ -4,10 +4,8 @@ import cv2
 
 def main():
 
-
     #Ex1 a)
     #image_filename = '../atlascar.png'
-
 
     #Ex1 b)
     parser = argparse.ArgumentParser(description='full path of image')
@@ -16,13 +14,6 @@ def main():
     print(args)
     #image_filename = args['full path']
 
-
-
-
-
-
-
-
     #imread o valor 1 diz que se for a cores vem a cores
 
 
@@ -30,8 +21,6 @@ def main():
 
     #cv2.imshow('window', image)  # Display the image
     #cv2.waitKey(0) # wait for a key press before proceeding
-
-
 
 
     # Ex1c)

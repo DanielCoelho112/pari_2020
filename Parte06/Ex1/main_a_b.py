@@ -7,7 +7,7 @@ def main():
     image_path = "../atlascar.png"
     img_rbg = cv2.imread(image_path)
 
-    center_coordinates = (img_rbg.shape[1] / 2, img_rbg.shape[0] / 2)
+    center_coordinates = (int(img_rbg.shape[1] / 2), int(img_rbg.shape[0] / 2))
     radius = 40
     color = (100, 0, 400)  # bgr color
     thickness = 2  # -1 fill the circle
@@ -30,19 +30,6 @@ def main():
 
     img_rbg_text = cv2.putText(img_rbg_circle,text,org,fontFace=font,fontScale=fontScale,color=color_text,thickness=thickness)
     cv2.imshow("Alinea b)", img_rbg_text)
-
-
-
-    #adding text
-
-
-
-
-
-
-
-
-
 
     cv2.waitKey(0)
 
