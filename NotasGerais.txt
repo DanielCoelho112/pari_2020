@@ -1,0 +1,8 @@
+Quem publica o quê?
+
+
+O gazebo publica o ODOM e o link primordial do robot, no nosso caso base_footprint
+
+A entidade responsavel por publicar desde o base_footprint até os restantes é o robot_state_publisher
+
+Logo, sem gazebo não existe ODOM, e portanto não existe as twist para o controlar!!!
